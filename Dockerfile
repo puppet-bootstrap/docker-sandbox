@@ -1,5 +1,5 @@
-FROM centos:7
+FROM almalinux:10
 
-RUN yum -y install http://yum.puppet.com/puppet6/puppet6-release-el-7.noarch.rpm && \
-    yum -y install puppet-agent && \
-    yum clean all
+RUN dnf -y install https://yum.voxpupuli.org/openvox8-release-el-$(rpm -E %rhel).noarch.rpm && \
+    dnf -y install openvox-agent && \
+    dnf clean all
